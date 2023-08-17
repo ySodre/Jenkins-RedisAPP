@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  redis-server:
+    container_name: redis
+    image: 'redis'
+    networks:
+      - devops_network
+    restart: always
+
+  node-app:
+    container_name: node-app-container
+    depends_on:
+      - redis-server
+    build: .
+    ports:
+      - "8080:8081"
+    networks:
+      - devops_network
+    restart: always
+
+networks:
+  devops_network:
