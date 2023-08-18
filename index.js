@@ -12,7 +12,7 @@ client.set('visits', 0);
 app.get('/', (req, res)=>{
     client.get('visits', (err, visits)=>{
         visits = parseInt(visits) + 1
-        res.send('Number of otários:' + visits)
+        res.send('Number of visits:' + visits)
         client.set('visits',parseInt(visits))
     })
 })
