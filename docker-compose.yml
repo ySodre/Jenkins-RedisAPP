@@ -9,7 +9,7 @@ services:
     restart: always
 
   node-app:
-    container_name: node-app-container
+    container_name: yuri-app
     depends_on:
       - redis-server
     build: .
